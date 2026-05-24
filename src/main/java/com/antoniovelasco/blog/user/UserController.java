@@ -1,4 +1,4 @@
-package com.antoniovelasco.blog.controller;
+package com.antoniovelasco.blog.user;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -15,12 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.antoniovelasco.blog.dto.UserRegisterDTO;
-import com.antoniovelasco.blog.dto.UserResponseDTO;
-import com.antoniovelasco.blog.model.User;
-import com.antoniovelasco.blog.repository.UserRepository;
-import com.antoniovelasco.blog.service.UserService;
 
 @RestController
 @RequestMapping("/api/users")

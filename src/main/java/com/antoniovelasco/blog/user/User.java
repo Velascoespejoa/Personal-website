@@ -1,7 +1,8 @@
-package com.antoniovelasco.blog.model;
+package com.antoniovelasco.blog.user;
 
 import java.util.List;
 
+import com.antoniovelasco.blog.post.Post;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.CascadeType;

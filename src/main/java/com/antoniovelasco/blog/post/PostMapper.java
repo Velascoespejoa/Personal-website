@@ -1,11 +1,8 @@
-package com.antoniovelasco.blog.mapper;
+package com.antoniovelasco.blog.post;
 
 import java.util.List;
 
 import org.mapstruct.Mapper;
-
-import com.antoniovelasco.blog.dto.PostResponseDTO;
-import com.antoniovelasco.blog.model.Post;
 
 @Mapper(componentModel = "spring")
 public interface PostMapper {

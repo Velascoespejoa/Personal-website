@@ -1,12 +1,8 @@
-package com.antoniovelasco.blog.mapper;
+package com.antoniovelasco.blog.user;
 
 import java.util.List;
 
 import org.mapstruct.Mapper;
-
-import com.antoniovelasco.blog.dto.UserRegisterDTO;
-import com.antoniovelasco.blog.dto.UserResponseDTO;
-import com.antoniovelasco.blog.model.User;
 
 @Mapper(componentModel = "spring")
 public interface UserMapper {

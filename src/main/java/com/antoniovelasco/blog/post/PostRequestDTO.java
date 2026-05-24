@@ -1,4 +1,4 @@
-package com.antoniovelasco.blog.dto;
+package com.antoniovelasco.blog.post;
 
 import lombok.Data;
 

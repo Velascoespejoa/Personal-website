@@ -1,5 +1,6 @@
-package com.antoniovelasco.blog.model;
+package com.antoniovelasco.blog.post;
 
+import com.antoniovelasco.blog.user.User;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Entity;

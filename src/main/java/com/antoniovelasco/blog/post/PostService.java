@@ -1,15 +1,11 @@
-package com.antoniovelasco.blog.service;
+package com.antoniovelasco.blog.post;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.antoniovelasco.blog.dto.PostResponseDTO;
-import com.antoniovelasco.blog.mapper.PostMapper;
-import com.antoniovelasco.blog.model.Post;
-import com.antoniovelasco.blog.repository.PostRepository;
-import com.antoniovelasco.blog.repository.UserRepository;
+import com.antoniovelasco.blog.user.UserRepository;
 
 @Service
 public class PostService {

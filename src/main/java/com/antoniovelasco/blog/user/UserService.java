@@ -1,15 +1,9 @@
-package com.antoniovelasco.blog.service;
+package com.antoniovelasco.blog.user;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
-
-import com.antoniovelasco.blog.dto.UserRegisterDTO;
-import com.antoniovelasco.blog.dto.UserResponseDTO;
-import com.antoniovelasco.blog.mapper.UserMapper;
-import com.antoniovelasco.blog.repository.UserRepository;
-import com.antoniovelasco.blog.model.User;
 
 @Service
 public class UserService {
