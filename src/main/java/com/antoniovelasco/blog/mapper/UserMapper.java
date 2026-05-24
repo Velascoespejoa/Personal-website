@@ -10,9 +10,8 @@ import com.antoniovelasco.blog.model.User;
 
 @Mapper(componentModel = "spring")
 public interface UserMapper {
-
+	
 	UserResponseDTO toResponseDTO(User user);	
-
 	
 	List<UserResponseDTO> toResponseDTOs(List<User> users);
 	

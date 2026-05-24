@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.antoniovelasco.blog.dto.PostResponseDTO;
+import com.antoniovelasco.blog.mapper.PostMapper;
 import com.antoniovelasco.blog.model.Post;
 import com.antoniovelasco.blog.repository.PostRepository;
 import com.antoniovelasco.blog.repository.UserRepository;
@@ -14,28 +15,20 @@ import com.antoniovelasco.blog.repository.UserRepository;
 public class PostService {
 	
 	private final PostRepository postRepo;
+	private final PostMapper postMap;
 	private final UserRepository userRepo;
 	
-	public PostService(PostRepository postRepo, UserRepository userRepo) {
+	public PostService(PostRepository postRepo, UserRepository userRepo, PostMapper postMap) {
 		this.postRepo = postRepo;
 		this.userRepo = userRepo;
+		this.postMap = postMap;
 	}
 	
 	public List<PostResponseDTO> getAllPosts(){
 		
 		List<Post> posts = postRepo.findAll();
-		List<PostResponseDTO> postsResponse = new ArrayList<>();
+		List<PostResponseDTO> postsResponse = postMap.toPostsResponse(posts);
 		
-		for (Post post : posts) {
-			
-			PostResponseDTO postResponse = new PostResponseDTO();
-			
-			postResponse.setBody(post.getBody());
-			postResponse.setId(post.getId());
-			postResponse.setTitle(post.getTitle());
-			
-			postsResponse.add(postResponse);
-		}
 		return postsResponse;
 	}
 
@@ -44,14 +37,18 @@ public class PostService {
 		Post post = postRepo.findById(id)
 				.orElseThrow(() -> new RuntimeException("Post not found"));	
 		
-		PostResponseDTO postResponse = new PostResponseDTO();
-		
-		postResponse.setBody(post.getBody());
-		postResponse.setId(post.getId());
-		postResponse.setTitle(post.getTitle());
-				
+		PostResponseDTO postResponse = postMap.toPostResponse(post);		
 		return postResponse;
 	}
+
+	public PostResponseDTO createPost(PostResponseDTO postResponse) {
+		
+		Post nuevoPost = postMap.PostRequestToPost(postResponse);
+		postRepo.save(nuevoPost);
+		return postResponse;
+	}
+	
+	
 	
 	
 	

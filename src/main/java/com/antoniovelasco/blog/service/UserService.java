@@ -55,12 +55,7 @@ public class UserService {
 		User user = userRepo.findById(id)
 		        .orElseThrow(() -> new RuntimeException("User not found"));	
 		
-		user.setEmail(userRegisterDTO.getEmail());
-		user.setFirstName(userRegisterDTO.getFirstName());
-		user.setLastName(userRegisterDTO.getLastName());
-		user.setNick(userRegisterDTO.getNick());
-		user.setPassword(userRegisterDTO.getPassword());
-		
+		user = userMap.userRegisterToUser(userRegisterDTO);		
 		userRepo.save(user);
 		
 		return userRegisterDTO;
